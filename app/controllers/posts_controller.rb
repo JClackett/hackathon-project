@@ -25,15 +25,16 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    if current_user.doctor == true
+      @post.doctor_id = Doctor.where(user_id: current_user.id).first.id
+      @post.patient_id = Patient.where(doctors_id: current_user.id).first.id
+      @post.save
+      redirect_to patient_path(@post.patient_id)
+    else
+      @post.patient_id = Patient.where(user_id: current_user.id).first.id
+      @post.doctor_id = Patient.where(user_id: current_user.id).first.doctors_id
+      @post.save
+      redirect_to patient_path(@post.patient_id)
     end
   end
 

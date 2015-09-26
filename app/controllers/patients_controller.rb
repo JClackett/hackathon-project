@@ -5,6 +5,8 @@ class PatientsController < ApplicationController
   # GET /patients.json
   def index
     @patients = Patient.all
+    @posts =Post.all
+    @post = Post.new
   end
 
   # GET /patients/1

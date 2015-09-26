@@ -12,7 +12,9 @@ class PatientsController < ApplicationController
   def show
     @posts = Post.all
     @messages = Message.all
+    @message = Message.new
     @results = Result.all
+
   end
 
   # GET /patients/new

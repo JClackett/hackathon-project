@@ -9,12 +9,12 @@
 </p>
 <div class="symptoms">
 <p>
-  <strong>Symptoms:</strong>
+  <strong>Symptoms</strong>
 </p>
 <%= link_to 'New Sypmtom', new_post_path(@post) %>
 	<% @posts.each do |post| %>
 		<div class="timestamp">
-			<%= post.created_at %>
+			<%= post.created_at.to_formatted_s %>
 		</div>
 		<div class="location">
 			<%= post.location %>
@@ -36,26 +36,62 @@
 
 <div class="messages">
 <p>
-  <strong>Messages:</strong>
+  <strong>Messages</strong>
 </p>
-<%= link_to 'New Message', new_post_path(@post) %>
+<%= link_to 'New Message', new_message_path(@message) %>
+
 	<% @messages.each do |message| %>
 		<div class="timestamp">
-			<%= message.created_at %>
+			<%= message.created_at.to_formatted_s %>
 		</div>
 		<div class="content">
 			<%= message.content %>
 		</div>
-	<%end%>	
+	<%end%>
+
+	<%= form_for(@message) do |f| %>
+	  <% if @message.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+	      <ul>
+	      <% @message.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	  <div class="field">
+	  	 <%= f.label :doctor_id %><br>
+
+	    <%= f.number_field :doctor_id %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :patient_id %><br>
+	    <%= f.number_field :patient_id %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :content %><br>
+	    <%= f.text_area :content %>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+
+	<% end %>
 </div>
 
 <div class="results">
 <p>
-  <strong>Results:</strong>
+  <strong>Results</strong>
 </p>
 	<% @results.each do |result| %>
 		<div class="timestamp">
-			<%= result.created_at %>
+			<%= result.created_at.to_formatted_s %>
 		</div>
 		<div class="status">
 			<%= result.status %>

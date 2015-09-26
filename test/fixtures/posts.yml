@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient_id: 1
+  location: MyString
+  discomfort: 1
+  frequency: MyString
+  initial_occurence: MyString
+  notes: MyText
+
+two:
+  patient_id: 1
+  location: MyString
+  discomfort: 1
+  frequency: MyString
+  initial_occurence: MyString
+  notes: MyText

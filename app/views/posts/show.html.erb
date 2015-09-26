@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @post.patient_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @post.location %>
+</p>
+
+<p>
+  <strong>Discomfort:</strong>
+  <%= @post.discomfort %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @post.frequency %>
+</p>
+
+<p>
+  <strong>Initial occurence:</strong>
+  <%= @post.initial_occurence %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @post.notes %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

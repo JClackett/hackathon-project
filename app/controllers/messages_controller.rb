@@ -28,12 +28,10 @@ class MessagesController < ApplicationController
     puts @message.patient_id
     if current_user.doctor == true
       @message.doctor_id = Doctor.where(user_id: current_user.id).first.id
-      @message.patient_id = Patient.where(id: @message.patient_id).first.id
       @message.created_by = current_user.id
       @message.save
       redirect_to patient_path(@message.patient_id)
     else
-      @message.patient_id = Patient.where(id: @message.patient_id).first.id
       @message.doctor_id = Patient.where(user_id: current_user.id).first.doctors_id
       @message.created_by = current_user.id
       @message.save

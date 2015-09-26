@@ -10,7 +10,7 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
-    @posts = Post.all
+    @posts = Post.where(patient_id: params[:id])
     @messages = Message.all
     @results = Result.all
   end

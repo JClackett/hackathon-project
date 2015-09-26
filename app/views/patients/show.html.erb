@@ -28,7 +28,7 @@
 
 	<% @posts.each do |post| %>
 		<div class="timestamp">
-			<%= post.created_at.to_formatted_s %>
+			<%= post.created_at.strftime("%A at %H:%M%p")  %>
 		</div>
 		<div class="location">
 			<%= post.location %>
@@ -45,7 +45,12 @@
 		<div class="notes">
 			<%= post.notes %>
 		</div>
-	<%end%>	
+	<%end%>
+	<% if current_user.doctor == true %>
+	<% else %>
+		<%= link_to 'New Symptom', new_post_path %>
+	<% end %>
+
 </div>
 
 <div class="messages">
@@ -55,7 +60,7 @@
 
 	<% @messages.each do |message| %>
 		<div class="timestamp">
-			<%= message.created_at.to_formatted_s %>
+			<%= message.created_at.strftime("%A at %H:%M%p")  %>
 		</div>
 		<div class="created_by">
 			<% @message_maker = User.where(id: [message.created_by]).first.first_name %>
@@ -104,7 +109,7 @@
 
 	<% @results.each do |result| %>
 		<div class="timestamp">
-			<%= result.created_at.to_formatted_s %>
+			<%= result.created_at.strftime("%A at %H:%M%p")  %>
 		</div>
 		<div class="status">
 			<%= result.status %>
@@ -116,6 +121,11 @@
 			<%= result.notes %>
 		</div>
 	<%end%>	
+
+<% if current_user.doctor == true %>
+	<%= link_to 'New Result', new_result_path %>
+<% end %>	
+
 </div>
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>

@@ -38,7 +38,6 @@ class MessagesController < ApplicationController
       @message.save
       redirect_to patient_path(@message.patient_id)
     end
-
   end
 
   # PATCH/PUT /messages/1

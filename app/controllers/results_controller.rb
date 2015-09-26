@@ -25,17 +25,19 @@ class ResultsController < ApplicationController
   # POST /results.json
   def create
     @result = Result.new(result_params)
-
-    respond_to do |format|
-      if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
-        format.json { render :show, status: :created, location: @result }
-      else
-        format.html { render :new }
-        format.json { render json: @result.errors, status: :unprocessable_entity }
-      end
+    if current_user.doctor == true
+      @result.doctor_id = Doctor.where(user_id: current_user.id).first.id
+      @result.patient_id = Patient.where(doctors_id: current_user.id).first.id
+      @result.save
+      redirect_to patient_path(@result.patient_id)
+    else
+      @result.patient_id = Patient.where(user_id: current_user.id).first.id
+      @result.doctor_id = Patient.where(user_id: current_user.id).first.doctors_id
+      @result.save
+      redirect_to patient_path(@result.patient_id)
     end
   end
+
 
   # PATCH/PUT /results/1
   # PATCH/PUT /results/1.json

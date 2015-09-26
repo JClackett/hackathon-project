@@ -89,6 +89,10 @@
 	    <%= f.text_area :content %>
 	  </div>
 
+	  <div class="field">
+	    <%= f.hidden_field :patient_id, value: @patient.id %>
+	  </div>
+
 	  <div class="actions">
 	    <%= f.submit %>
 	  </div>

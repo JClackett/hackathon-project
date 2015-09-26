@@ -8,10 +8,10 @@
 
 
 users_list = [
-  { email: 'doctor1@gmail.com', password: 'password'},
-  { email: 'doctor2@gmail.com', password: 'password'},
-  { email: 'patient1@gmail.com', password: 'password'},
-  { email: 'patient2@gmail.com', password: 'password'},
+  { first_name: "Andrew", last_name: "Mitchell", doctor: true, email: 'doctor1@gmail.com', password: 'password'},
+  { first_name: "Bob", last_name: "Stinson", doctor: true, email: 'doctor2@gmail.com', password: 'password'},
+  { first_name: "Betty", last_name: "Stratford",email: 'patient1@gmail.com', password: 'password'},
+  { first_name: "Stanley", last_name: "Rimple",email: 'patient2@gmail.com', password: 'password'},
 ]
 
 users_list.each do |user|

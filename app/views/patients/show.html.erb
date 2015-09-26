@@ -7,26 +7,38 @@
   <strong>Doctors:</strong>
   <%= @patient.doctors_id %>
 </p>
-
 <div class="symptoms">
-	<div class="timestamp">
-		<%= @posts.created_at %>
-	</div>
-	<div class="location">
-		<%= @posts.location %>
-	</div>
-	<div class="discomfort">
-		<%= @posts.discomfort %>
-	</div>
-	<div class="frequency">
-		<%= @posts.frequency %>
-	</div>
-	<div class="initial_occurence">
-		<%= @posts.initial_occurence %>
-	</div>
-	<div class="notes">
-		<%= @posts.notes %>
-	</div>
+	<% @posts.each do |post| %>
+		<div class="timestamp">
+			<%= post.created_at %>
+		</div>
+		<div class="location">
+			<%= post.location %>
+		</div>
+		<div class="discomfort">
+			<%= post.discomfort %>
+		</div>
+		<div class="frequency">
+			<%= post.frequency %>
+		</div>
+		<div class="initial_occurence">
+			<%= post.initial_occurence %>
+		</div>
+		<div class="notes">
+			<%= post.notes %>
+		</div>
+	<%end%>	
+</div>
+
+<div class="messages">
+	<% @messages.each do |message| %>
+		<div class="timestamp">
+			<%= message.created_at %>
+		</div>
+		<div class="content">
+			<%= message.content %>
+		</div>
+	<%end%>	
 </div>
 
 <%= link_to 'Edit', edit_patient_path(@patient) %> |

@@ -13,6 +13,7 @@ class PatientsController < ApplicationController
 
     @posts = Post.where(patient_id: params[:id])
     @messages = Message.where(patient_id: params[:id])
+    @message = Message.new
     @results = Result.where(patient_id: params[:id])
   end
 

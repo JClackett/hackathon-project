@@ -25,9 +25,14 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-    if current_user.id == 
-      @message.patient_id = Patient.where(user_id: current_user.id).first.id
+    if current_user.doctor == true
       @message.doctor_id = Doctor.where(user_id: current_user.id).first.id
+      @message.patient_id = Patient.where(doctors_id: current_user.id).first.id
+    else
+      @message.patient_id = Patient.where(user_id: current_user.id).first.id
+      @message.doctor_id = Patient.where(user_id: current_user.id).first.doctors_id
+
+    end
 
     respond_to do |format|
       if @message.save

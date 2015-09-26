@@ -35,3 +35,17 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+
+
+  <% @messages.each do |message| %>
+    <div class="timestamp">
+      <%= message.created_at.to_formatted_s %>
+    </div>
+    <div class="created_by">
+      <%= message.created_by %>
+    </div>
+    <div class="content">
+      <%= message.content %>
+    </div>
+  <%end%>
+  

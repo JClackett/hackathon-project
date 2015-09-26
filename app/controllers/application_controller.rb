@@ -31,7 +31,7 @@ end
 
 # This redirects users upon sign out
 def after_sign_out(resource_or_scope)
-  static_pages_path
+  new_user_session_path
 end
 
 

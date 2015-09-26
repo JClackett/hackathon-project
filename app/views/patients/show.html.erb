@@ -1,13 +1,17 @@
 <p>
-  <strong>User:</strong>
-  <%= @patient.user_id %>
+  <strong>Patient:</strong>
+  <%= @patient.id %>
 </p>
 
 <p>
-  <strong>Doctors:</strong>
+  <strong>Doctor:</strong>
   <%= @patient.doctors_id %>
 </p>
 <div class="symptoms">
+<p>
+  <strong>Symptoms:</strong>
+</p>
+<%= link_to 'New Sypmtom', new_post_path(@post) %>
 	<% @posts.each do |post| %>
 		<div class="timestamp">
 			<%= post.created_at %>
@@ -31,6 +35,10 @@
 </div>
 
 <div class="messages">
+<p>
+  <strong>Messages:</strong>
+</p>
+<%= link_to 'New Message', new_post_path(@post) %>
 	<% @messages.each do |message| %>
 		<div class="timestamp">
 			<%= message.created_at %>
@@ -41,5 +49,24 @@
 	<%end%>	
 </div>
 
+<div class="results">
+<p>
+  <strong>Results:</strong>
+</p>
+	<% @results.each do |result| %>
+		<div class="timestamp">
+			<%= result.created_at %>
+		</div>
+		<div class="status">
+			<%= result.status %>
+		</div>
+		<div class="raw_data">
+			<%= result.raw_data %>
+		</div>
+		<div class="notes">
+			<%= result.notes %>
+		</div>
+	<%end%>	
+</div>
 <%= link_to 'Edit', edit_patient_path(@patient) %> |
 <%= link_to 'Back', patients_path %>

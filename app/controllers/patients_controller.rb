@@ -10,6 +10,9 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
+    @posts = Post.all
+    @messages = Message.all
+    @results = Result.all
   end
 
   # GET /patients/new

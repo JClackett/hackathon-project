@@ -24,7 +24,8 @@ def after_sign_in_path_for(resource)
   if current_user.doctor == true
     posts_path
   else
-    patient_path(current_user.patient_id)
+    @onion = Patient.where(user_id: current_user.id).first.id
+    patient_path(@onion)
   end
 
 end

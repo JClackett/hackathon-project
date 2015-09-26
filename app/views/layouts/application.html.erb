@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mvp</title>
+  <title>MyGP - Island Medical Centre</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<wrapper>
+		<header>
+			<%= image_tag('IMClogo', class: 'logo') %>
+				<div class="login-logout">
+				<% if current_page?('/users/sign_in') %>
+				<% else %>
+					<% if user_signed_in? %>
+						<%= link_to'Logout', destroy_user_session_path, :method => :delete %>
+						<% else %>
+						<%= link_to 'Login', new_user_session_path %>
+					<% end %>
+					<%= image_tag('notif', class: 'notif') %>
+				<% end %>
+
+				</div>
+
+		</header>
+	</wrapper>
 
 
 

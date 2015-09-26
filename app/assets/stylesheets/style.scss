@@ -1,0 +1,97 @@
+$blue: #81B6DB;  // blue  //
+$green: #77DD77;    // green // 
+$red: #FF4955;   // red //
+$darkred: #FF5567; // darker red //
+$lightred: #FFD8E8; // light red//
+$orange: #FFB246;   // orange //
+$white: #fff; // white // 
+$black: #000; // black //
+$lightgrey: #eee; // lightgrey //
+$grey: #888; // grey //
+$purple: #8171B6; // purple //
+$yellow: #FFF5AC; // yellow //
+
+
+
+/* ===================================================
+================= General Styling ====================
+====================================================*/
+
+
+body {
+  background-color: #F2F2F2;
+  margin:0;
+  padding: 0;
+  font-family: 'Roboto',sans-serif;
+  font-size: 62.5%;
+}
+
+.wrapper {
+  margin: 0;
+  width:100%
+}
+
+
+/* ===================================================
+==================== Login form ======================
+====================================================*/
+
+.intro-header {
+	width: 40%;
+	margin: 120px 30% 0 30%;
+	text-align: center;
+}
+
+
+
+.login-form-title {
+	text-align: center;
+	width: 30%;
+	margin: 50px 35% 0 35%;
+	color: #555;
+	padding: 20px;
+}
+
+.login-form-title h1 {
+	text-align: center;
+	width: 120%;
+}
+
+.login-form {
+	width: 30%;
+	height: 300px;
+	margin: 50px 34%;
+	background-color: #FFF;
+	border-radius: 15px;
+	border-style: none;
+	padding: 20px 1%;
+
+
+	.field {
+		text-align: center;
+		padding: 10px;
+	}
+
+	.actions {
+		text-align: center;
+	}
+
+	a {
+		text-align: center;
+	}
+}
+
+.input {
+	width: 90%;
+	height: 30px;
+	padding: 8px;
+	font-family: 'roboto', sans-serif;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #DDD;
+	color: #555;
+	font-size: 1rem;
+	font-weight:400;
+	background-color: #FFF;
+}
+

@@ -4,9 +4,10 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
-    @posts =Post.all
+    @posts = Post.all
     @post = Post.new
+    @doctor = Doctor.where(user_id: current_user.id).first.id
+    @patients = Patient.where(doctors_id: @doctor)
   end
 
   # GET /patients/1

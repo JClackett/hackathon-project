@@ -1,51 +1,54 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Patient</th>
-      <th>Location</th>
-      <th>Discomfort</th>
-      <th>Frequency</th>
-      <th>Initial occurence</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1>Urgent Posts</h1>
+<div class="doctors-posts">
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.patient_id %></td>
-        <td><%= post.location %></td>
-        <td><%= post.discomfort %></td>
-        <td><%= post.frequency %></td>
-        <td><%= post.initial_occurence %></td>
-        <td><%= post.notes %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      
+      <% @post_maker_user=Patient.where(id: post.patient_id).first.user_id %>
+      <% @post_maker_first = User.where(id: @post_maker_user).first.first_name %>
+      <% @post_maker_last = User.where(id: @post_maker_user).first.last_name %>
+        
+        <div class="post-item post-maker">
+          <h3>Patients Name</h3>
+          <%= @post_maker_first + " " + @post_maker_last %>
+        </div>
+        <div class="post-item post-notes">
+          <h4>Patients Notes</h4>
+          <%= post.notes %>
+        </div>
+        <div class="post-item initial-occurence">
+          <h4>Initial Occurance</h4>
+          <%= post.initial_occurence %>
+        </div>
+        <div class="created-at">
+          <%= post.created_at.strftime("%A at %H:%M%p")%>
+        </div>
     <% end %>
-  </tbody>
-</table>
+</div>
+
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
 
-
-  <% @messages.each do |message| %>
-    <div class="timestamp">
-      <%= message.created_at.to_formatted_s %>
-    </div>
-    <div class="created_by">
-      <%= message.created_by %>
-    </div>
-    <div class="content">
-      <%= message.content %>
-    </div>
+<div class="latest-messages-container">
+  <h3 class="latest-messages">Latest Messages</h3>
+  <div class="messages-wrapper">
+  <% @patients_messages.each do |message| %>
+      <% @message_maker_profile = Patient.where(user_id: message.created_by).first.id %>
+  <%= link_to patient_path(@message_maker_profile) do %>
+    <div class="message-container">
+      <div class="created-by">
+        <% @message_maker_first = User.where(id: [message.created_by]).first.first_name %>
+        <% @message_maker_last = User.where(id: [message.created_by]).first.last_name %>
+        <%= @message_maker_first +" "+ @message_maker_last %>
+      </div>
+      <div class="content">
+        <%= message.content %>
+      </div>
+      <div class="timestamp">
+        <%= message.created_at.strftime("%A at %H:%M%p")  %>
+      </div>
+      </div>
+      <% end %>
   <%end%>
+</div>
+</div>
   

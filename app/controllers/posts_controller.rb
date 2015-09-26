@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   def index
     @doctor = Doctor.where(user_id: current_user.id).first
     @posts = Post.where(doctor_id: @doctor.id).all
-
     @messages = Message.where(doctor_id: @doctor.id).all
-
+    @doctor_messages = Message.where(created_by: @doctor.user_id).all
+    @patients_messages = @messages - @doctor_messages
   end
 
   # GET /posts/1

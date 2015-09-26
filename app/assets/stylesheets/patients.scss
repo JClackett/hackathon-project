@@ -1,3 +1,148 @@
-// Place all the styles related to the patients controller here.
+/*// Place all the styles related to the patients controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+body {
+	margin: 0;
+	font-family: 'Roboto';
+}
+
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.wrapper {
+	width:1100px;
+	margin: 0 auto;
+	@extend .group;
+
+	.container {
+		width:33%;
+		float: left;
+	}
+	
+	.info-container {
+		height: 60vh;
+		overflow: auto;
+	}
+
+	.symptoms {
+		padding: 5px;
+		strong {
+			font-size: 40px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.symptom-input{
+			width: 92%;
+			resize:none;
+			border-radius: 5px ;
+			padding: 10px;
+			font-size: 20px;
+			height: 27px;
+			background: lightgrey;
+
+			.new-button {
+				width:130px;
+				margin:0 auto;
+			}
+
+			a {
+				text-decoration: none;
+				color: black;
+			}
+
+		}
+
+		.info-container {	
+			.symptom-contents{
+				padding: 10px;
+				margin: 10px;
+				border: solid 2px darkgrey;
+				border-radius: 5px;
+
+				.created_by {
+					font-weight: bold;
+				}
+
+				.input {
+					width:30px;
+					margin:0 auto;
+				}
+
+				.location .discomfort .frequency .initial_occurence{
+					padding: 5px;
+				}
+
+				.notes {
+
+				}
+
+				.timestamp {
+					float:right;
+					font-size: 10px;
+				}
+			}
+
+		}
+	}
+
+	.messages {
+		padding: 5px;
+		strong {
+			font-size: 40px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.message-input{
+			width:90%;
+
+			textarea {
+				width: 103%;
+				resize:none;
+				border-radius: 5px ;
+				padding: 10px;
+				font-size: 20px;
+				height: 25px;
+			}
+
+			.actions {
+				margin: 0;
+			}
+
+			input {
+				float:right;
+				border: none;
+				font-size: 20px;
+			    right: -22px;
+			    position: relative;
+			    border-radius: 5px;
+			    bottom: 0px;
+			    padding: 5px 10px;
+			}
+		}
+
+		.info-container {	
+			.message-contents {
+				padding: 10px;
+				.created_by {
+					font-weight: bold;
+				}
+
+				.content {
+					padding: 5px;
+				}
+
+				.timestamp {
+					float:right;
+					font-size: 10px;
+				}
+			}
+
+		}
+	}
+}

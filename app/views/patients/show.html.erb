@@ -15,108 +15,127 @@
 
 <%end%>
 
-<div class="symptoms">
-<p>
-  <strong>Symptoms</strong>
-</p>
-	<% @posts.each do |post| %>
-		<div class="timestamp">
-			<%= post.created_at.strftime("%A at %H:%M%p")  %>
+<div class="wrapper">
+	<div class="symptoms container">
+		<p>
+		  <strong>Symptoms</strong>
+		</p>
+			<div class="symptom-input">
+				<% if current_user.doctor == true %>
+				<% else %>
+					<div class="new-button"><%= link_to 'New Symptom', new_post_path %>
+					</div>
+				<% end %>
+			</div>
+			<div class="symptom-history">
+				<p> Symtpom History </p>
+			</div>
+			<div class="info-container">
+				<div class="symptom-container">
+					<% @posts.each do |post| %>
+						<div class="symptom-contents">
+							<div class="timestamp">
+								<%= post.created_at.strftime("%A at %H:%M%p")  %>
+							</div>
+							<div class="location">
+								<a> Location of Issue: </a><br>
+								<div class="input">
+									<%= post.location %>
+								</div>
+							</div>
+							<div class="discomfort">
+								<a> Level of Discomfort: </a><br>
+								<div class="input">
+									<%= post.discomfort %>
+								</div>
+							</div>
+							<div class="frequency">
+								<a> Frequency: </a><br>
+								<div class="input">
+									<%= post.frequency %>
+								</div>
+							</div>
+							<div class="initial_occurence">
+								<a> Initial Occurence: </a><br>
+								<div class="input">
+									<%= post.initial_occurence %>
+								</div>
+							</div>
+							<div class="notes">
+								<%= post.notes %>
+							</div>
+						</div>
+					<%end%>
+				</div>
 		</div>
-		<div class="location">
-			<%= post.location %>
+	</div>
+
+	<div class="messages container">
+		<p>
+		  <strong>Messages</strong>
+		</p>
+		<div class="message-input">
+			<%= form_for(@message) do |f| %>
+
+			  <div class="field">
+			    <%= f.text_area :content, :placeholder => "Type your message here..." %>
+			  </div>
+
+			  <div class="field">
+			    <%= f.hidden_field :patient_id, value: @patient.id %>
+			  </div>
+
+			  <div class="actions group">
+			    <%= f.submit "Send" %>
+			  </div>
+
+			<% end %>
 		</div>
-		<div class="discomfort">
-			<%= post.discomfort %>
+		<div class="info-container">
+			<% @messages.each do |message| %>
+				<div class="message-contents">
+					<div class="created_by">
+						<% @message_maker = User.where(id: [message.created_by]).first.first_name %>
+						<%= @message_maker %>
+					</div>
+					<div class="content">
+						<%= message.content %>
+					</div>
+					<div class="timestamp">
+						<%= message.created_at.strftime("%A at %H:%M%p")  %>
+					</div>
+				</div>
+			<%end%>
 		</div>
-		<div class="frequency">
-			<%= post.frequency %>
-		</div>
-		<div class="initial_occurence">
-			<%= post.initial_occurence %>
-		</div>
-		<div class="notes">
-			<%= post.notes %>
-		</div>
-	<%end%>
+
+	</div>
+
+	<div class="results container">
+	<p>
+	  <strong>Results</strong>
+	</p>
+		
+
+		<% @results.each do |result| %>
+			<div class="timestamp">
+				<%= result.created_at.strftime("%A at %H:%M%p")  %>
+			</div>
+			<div class="status">
+				<%= result.status %>
+			</div>
+			<div class="raw_data">
+				<%= result.raw_data %>
+			</div>
+			<div class="notes">
+				<%= result.notes %>
+			</div>
+		<%end%>	
+
 	<% if current_user.doctor == true %>
-	<% else %>
-		<%= link_to 'New Symptom', new_post_path %>
-	<% end %>
+		<%= link_to 'New Result', new_result_path %>
+	<% end %>	
 
+	</div>
+	<%= link_to 'Edit', edit_patient_path(@patient) %> |
+	<%= link_to 'Back', patients_path %>
 </div>
-
-<div class="messages">
-<p>
-  <strong>Messages</strong>
-</p>
-
-	<% @messages.each do |message| %>
-		<div class="timestamp">
-			<%= message.created_at.strftime("%A at %H:%M%p")  %>
-		</div>
-		<div class="created_by">
-			<% @message_maker = User.where(id: [message.created_by]).first.first_name %>
-			<%= @message_maker %>
-		</div>
-		<div class="content">
-			<%= message.content %>
-		</div>
-	<%end%>
-
-	<%= form_for(@message) do |f| %>
-	  <% if @message.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
-	      <ul>
-	      <% @message.errors.full_messages.each do |message| %>
-	        <li><%= message %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-
-	  <div class="field">
-	    <%= f.text_area :content %>
-	  </div>
-
-	  <div class="field">
-	    <%= f.hidden_field :patient_id, value: @patient.id %>
-	  </div>
-
-	  <div class="actions">
-	    <%= f.submit %>
-	  </div>
-
-	<% end %>
-</div>
-
-<div class="results">
-<p>
-  <strong>Results</strong>
-</p>
-	
-
-	<% @results.each do |result| %>
-		<div class="timestamp">
-			<%= result.created_at.strftime("%A at %H:%M%p")  %>
-		</div>
-		<div class="status">
-			<%= result.status %>
-		</div>
-		<div class="raw_data">
-			<%= result.raw_data %>
-		</div>
-		<div class="notes">
-			<%= result.notes %>
-		</div>
-	<%end%>	
-
-<% if current_user.doctor == true %>
-	<%= link_to 'New Result', new_result_path %>
-<% end %>	
-
-</div>
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>

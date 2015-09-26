@@ -1,3 +1,4 @@
 class Post < ActiveRecord::Base
-	belongs_to :patients
+	belongs_to :patient
+	belongs_to :doctor
 end

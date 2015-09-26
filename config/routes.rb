@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+
+
+  resources :patients
   resources :messages
   resources :results
-  resources :patients
   resources :posts
-  
   resources :doctors
   devise_for :users
 

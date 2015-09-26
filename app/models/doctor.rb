@@ -3,4 +3,5 @@ class Doctor < ActiveRecord::Base
 	has_many :patients
 	has_many :messages
 	has_many :results
+	has_many :posts
 end

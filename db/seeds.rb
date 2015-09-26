@@ -37,8 +37,8 @@ patients_list.each do |patient|
 end
 
 posts_list = [
-  { patient_id: '1', location: 'head', discomfort: '7', frequency: 'intermittent', initial_occurence: 'last week', notes: "I've had a pretty bad headache on and off for a week"},
-  { patient_id: '2', location: 'throat', discomfort: '2', frequency: 'constant', initial_occurence: 'yesterday morning', notes: "Woke up yesterday with a very tickly cough"},
+  { patient_id: '1', doctor_id: '1', location: 'head', discomfort: '7', frequency: 'intermittent', initial_occurence: 'last week', notes: "I've had a pretty bad headache on and off for a week"},
+  { patient_id: '2', doctor_id: '2', location: 'throat', discomfort: '2', frequency: 'constant', initial_occurence: 'yesterday morning', notes: "Woke up yesterday with a very tickly cough"},
 ]
 
 posts_list.each do |post|

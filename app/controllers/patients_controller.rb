@@ -16,7 +16,9 @@ class PatientsController < ApplicationController
     @message = Message.new
     @results = Result.where(patient_id: params[:id])
     @result = Result.new
+    
     @patient_name = User.where(id: @patient.user_id).first.first_name
+  
   end
 
   # GET /patients/new

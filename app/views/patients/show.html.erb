@@ -44,6 +44,9 @@
 		<div class="timestamp">
 			<%= message.created_at.to_formatted_s %>
 		</div>
+		<div class="created_by">
+			<%= message.created_by %>
+		</div>
 		<div class="content">
 			<%= message.content %>
 		</div>
@@ -61,17 +64,6 @@
 	      </ul>
 	    </div>
 	  <% end %>
-
-	  <div class="field">
-	  	 <%= f.label :doctor_id %><br>
-
-	    <%= f.number_field :doctor_id %>
-	  </div>
-
-	  <div class="field">
-	    <%= f.label :patient_id %><br>
-	    <%= f.number_field :patient_id %>
-	  </div>
 
 	  <div class="field">
 	    <%= f.label :content %><br>

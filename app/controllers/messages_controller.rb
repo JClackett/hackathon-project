@@ -28,21 +28,17 @@ class MessagesController < ApplicationController
     if current_user.doctor == true
       @message.doctor_id = Doctor.where(user_id: current_user.id).first.id
       @message.patient_id = Patient.where(doctors_id: current_user.id).first.id
+      @message.created_by = current_user.id
+      @message.save
+      redirect_to patient_path(@message.patient_id)
     else
       @message.patient_id = Patient.where(user_id: current_user.id).first.id
       @message.doctor_id = Patient.where(user_id: current_user.id).first.doctors_id
-
+      @message.created_by = current_user.id
+      @message.save
+      redirect_to patient_path(@message.patient_id)
     end
 
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /messages/1

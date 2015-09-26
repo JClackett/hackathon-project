@@ -4,7 +4,10 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    @posts = Post.all
+    @post = Post.new
+    @doctor = Doctor.where(user_id: current_user.id).first.id
+    @patients = Patient.where(doctors_id: @doctor)
   end
 
   # GET /patients/1
@@ -16,7 +19,9 @@ class PatientsController < ApplicationController
     @message = Message.new
     @results = Result.where(patient_id: params[:id])
     @result = Result.new
+    
     @patient_name = User.where(id: @patient.user_id).first.first_name
+  
   end
 
   # GET /patients/new

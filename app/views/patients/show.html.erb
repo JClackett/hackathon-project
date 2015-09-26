@@ -19,13 +19,6 @@
 <p>
   <strong>Symptoms</strong>
 </p>
-
-<% if current_user.doctor == true %>
-
-<%else%>
-	<%= link_to 'New Sypmtom', new_post_path(@post) %>
-<%end%>
-
 	<% @posts.each do |post| %>
 		<div class="timestamp">
 			<%= post.created_at.strftime("%A at %H:%M%p")  %>
@@ -85,7 +78,6 @@
 	  <% end %>
 
 	  <div class="field">
-	    <%= f.label 'New Message' %><br>
 	    <%= f.text_area :content %>
 	  </div>
 

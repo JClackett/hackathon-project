@@ -16,4 +16,22 @@ class ApplicationController < ActionController::Base
       }
     end
   end
+
+# This redirects users upon sign in
+def after_sign_in_path_for(resource)
+
+  if current_user.doctor == true
+    posts_path
+  else
+    patient_path(current_user.patient_id)
+  end
+
+end
+
+# This redirects users upon sign out
+def after_sign_out(resource_or_scope)
+  static_pages_path
+end
+
+
 end

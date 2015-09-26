@@ -100,12 +100,7 @@
 <p>
   <strong>Results</strong>
 </p>
-
-<% if current_user.doctor == true %>
-	<%= link_to 'New Results', new_result_path(@result) %>
-<%else%>
 	
-<%end%>
 
 	<% @results.each do |result| %>
 		<div class="timestamp">

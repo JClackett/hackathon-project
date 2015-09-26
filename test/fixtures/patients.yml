@@ -2,8 +2,8 @@
 
 one:
   user_id: 1
-  doctor_id: 1
+  doctors_id: 1
 
 two:
   user_id: 1
-  doctor_id: 1
+  doctors_id: 1

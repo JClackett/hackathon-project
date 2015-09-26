@@ -1,17 +1,31 @@
-<p>
-  <strong>Patient:</strong>
-  <%= @patient.id %>
-</p>
+<% if current_user.doctor == true %>
+	<p>
+		<strong>Patient:</strong>
+		<%= @patient_name %>
+	</p>
 
-<p>
-  <strong>Doctor:</strong>
-  <%= @patient.doctors_id %>
-</p>
+<%else%>
+	<p>
+		<strong>Dr.</strong>
+		<% @patient = Patient.where(user_id: [current_user.id]).first%>
+		<% @doctor = Doctor.where(id: [@patient.doctors_id]).first %>
+		<% @doctor_name = User.where(id: [@doctor.user_id]).first.first_name %>
+		<%= @doctor_name %>
+	</p>
+
+<%end%>
+
 <div class="symptoms">
 <p>
   <strong>Symptoms</strong>
 </p>
-<%= link_to 'New Sypmtom', new_post_path(@post) %>
+
+<% if current_user.doctor == true %>
+
+<%else%>
+	<%= link_to 'New Sypmtom', new_post_path(@post) %>
+<%end%>
+
 	<% @posts.each do |post| %>
 		<div class="timestamp">
 			<%= post.created_at.to_formatted_s %>
@@ -38,14 +52,14 @@
 <p>
   <strong>Messages</strong>
 </p>
-<%= link_to 'New Message', new_message_path(@message) %>
 
 	<% @messages.each do |message| %>
 		<div class="timestamp">
 			<%= message.created_at.to_formatted_s %>
 		</div>
 		<div class="created_by">
-			<%= message.created_by %>
+			<% @message_maker = User.where(id: [message.created_by]).first.first_name %>
+			<%= @message_maker %>
 		</div>
 		<div class="content">
 			<%= message.content %>
@@ -66,7 +80,7 @@
 	  <% end %>
 
 	  <div class="field">
-	    <%= f.label :content %><br>
+	    <%= f.label 'New Message' %><br>
 	    <%= f.text_area :content %>
 	  </div>
 
@@ -81,6 +95,13 @@
 <p>
   <strong>Results</strong>
 </p>
+
+<% if current_user.doctor == true %>
+	<%= link_to 'New Results', new_result_path(@result) %>
+<%else%>
+	
+<%end%>
+
 	<% @results.each do |result| %>
 		<div class="timestamp">
 			<%= result.created_at.to_formatted_s %>

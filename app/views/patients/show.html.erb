@@ -95,31 +95,39 @@
 	</div>
 
 	<div class="results container">
-	<p>
-	  <strong>Results</strong>
-	</p>
-		
+		<p>
+		  <strong>Results</strong>
+		</p>
+		<% if current_user.doctor == true %>
+			<div class="results-input">
+				<%= link_to 'New Result', new_result_path %>
+			</div>
+		<% end %>	
+		<div class="info-container">
+			<% @results.each do |result| %>
+				<div class="results-contents">
+					<div class="timestamp">
+						<%= result.created_at.strftime("%A at %H:%M%p")  %>
+					</div>
+					<div class="status">
+						<a> Summary of Results: </a><br>
+						<%= result.status %>
+					</div>
+					<div class="raw_data">
+						<a> Data: </a><br>
+				
 
-		<% @results.each do |result| %>
-			<div class="timestamp">
-				<%= result.created_at.strftime("%A at %H:%M%p")  %>
-			</div>
-			<div class="status">
-				<%= result.status %>
-			</div>
-			<div class="raw_data">
-				<%= result.raw_data %>
-			</div>
-			<div class="notes">
-				<%= result.notes %>
-			</div>
-		<%end%>	
+							<%= image_tag('attachment', class: 'attachment') %>
 
-	<% if current_user.doctor == true %>
-		<%= link_to 'New Result', new_result_path %>
-	<% end %>	
-
+					
+					</div>
+					<div class="notes">
+						<a> Doctors notes: </a><br>
+						<%= result.notes %>
+					</div>
+				</div>
+			<%end%>	
+		</div>
 	</div>
-	<%= link_to 'Edit', edit_patient_path(@patient) %> |
-	<%= link_to 'Back', patients_path %>
+
 </div>

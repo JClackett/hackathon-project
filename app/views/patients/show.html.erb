@@ -79,7 +79,7 @@
 		<div class="message-input">
 			<%= form_for(@message) do |f| %>
 
-			  <div class="field">
+			  <div class="field box">
 			    <%= f.text_area :content, :placeholder => "Type your message here..." %>
 			  </div>
 
@@ -134,8 +134,10 @@
 					<div class="raw_data">
 						<a> Data: </a><br>
 				
-
+							<%= link_to "http://www.beatcfsandfms.org/GeorgesTests/OrganicAnal_1098_pg1.gif",class: 'attachment' do %>
 							<%= image_tag('attachment', class: 'attachment') %>
+
+							<%end%>
 
 					
 					</div>

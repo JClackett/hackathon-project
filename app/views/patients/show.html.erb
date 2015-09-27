@@ -8,7 +8,7 @@
 			</p>
 
 		<%else%>
-			<p>	Hello <%= @patient_name %>, you are contacting your GP, Dr.
+			<p>	Hello <%= @patient_name %>, you are speaking with your GP, Dr.
 				<% @patient = Patient.where(user_id: [current_user.id]).first%>
 				<% @doctor = Doctor.where(id: [@patient.doctor_id]).first %>
 				<% @doctor_name = User.where(id: [@doctor.user_id]).first.first_name %>
@@ -21,9 +21,7 @@
 		<%end%>
 	</div>
 	<div class="symptoms container">
-		<p>
-		  <strong>Symptoms</strong>
-		</p>
+		  <h3 class="header">Symptoms</h3>
 		<% if current_user.doctor == true %>
 						<% else %>
 			<div class="symptom-input">
@@ -71,9 +69,7 @@
 	</div>
 
 	<div class="messages container">
-		<p>
-		  <strong>Messages</strong>
-		</p>
+		  <h3>Messages</h3>
 		<div class="message-input">
 			<%= form_for(@message) do |f| %>
 
@@ -111,9 +107,7 @@
 	</div>
 
 	<div class="results container">
-		<p>
-		  <strong>Results</strong>
-		</p>
+		  <h3>Results</h3>
 		<% if current_user.doctor == true %>
 			<div class="results-input">
 				<%= link_to 'New Result', new_result_path(:patient_id => @patient.id) %>

@@ -34,9 +34,10 @@ body {
 		p {
 			text-align: center;
 			font-size: 30px;
+			margin:10px;
 		}
 		img {
-			padding: 20px;
+			padding: 10px;
 			border-radius:50%;
 			height: 80px;
 			width: 80px;
@@ -51,10 +52,12 @@ body {
 
 	.symptoms {
 		padding: 15px;
-		strong {
-			font-size: 40px;
-			width: 100%;
-			margin: 0 auto;
+		text-align: center;
+
+		.header {
+			height:60px;
+			font-size: 35px;
+			margin: 0;
 		}
 		.symptom-input{
 			width: 94%;
@@ -92,6 +95,7 @@ body {
 
 				a {
 					float: left;
+					font-weight: bold;
 				}
 
 				p {
@@ -115,18 +119,19 @@ body {
 	}
 
 	.messages {
+		text-align: center;
 		padding: 15px;
-		strong {
-			font-size: 40px;
-			width: 100%;
-			margin: 0 auto;
+		h3 {
+			height:60px;
+			font-size: 35px;
+			margin: 0;
 		}
 		.message-input{
 			width:90%;
 
 			.box {
-				    width: 230px;
-    float: left;
+				width: 230px;
+   				float: left;
 			}
 
 			textarea {
@@ -135,6 +140,7 @@ body {
 				padding: 10px;
 				font-size: 20px;
 				height: 25px;
+				font-family: Roboto;
 			}
 
 			.actions {
@@ -145,6 +151,7 @@ body {
 				border: none;
 				font-size: 18px;
 				font-weight: regular;
+				font-family: Roboto;
 			    position: relative;
 			    padding: 5px 10px;
 			    cursor: pointer;
@@ -168,8 +175,8 @@ body {
 			.message-contents {
 				padding: 10px;
 
-				.created_by a{
-					font-weight: 500;
+				.created_by {
+					font-weight: bolder;
 				}
 
 				.content {
@@ -185,11 +192,12 @@ body {
 	}
 
 	.results {
+		text-align: center;
 		padding: 15px;
-		strong {
-			font-size: 40px;
-			width: 100%;
-			margin: 0 auto;
+		h3 {
+			height:60px;
+			font-size: 35px;
+			margin: 0;
 		}
 		.results-input{
 			width: 94%;
@@ -197,11 +205,12 @@ body {
 			padding: 10px;
 			font-size: 20px;
 			height: 27px;
-			background: lightgrey;
+			background-color: lightgrey;
 			text-align: center;
 			margin-bottom: 10px;
+		
 			.new-button {
-
+			
 			}
 
 			a {
@@ -210,6 +219,11 @@ body {
 				color: black;
 			}
 
+		}
+
+
+		.results-input:hover {
+			background-color: #bbb;
 		}
 
 		.info-container {	

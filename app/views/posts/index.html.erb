@@ -1,4 +1,11 @@
 <div class="wrapper">
+        <div class="hero">
+            <p> Doctor's Dashboard
+              <br>
+              <%= image_tag ('Doctor-790x1024.jpg')%>
+            </p>
+
+      </div>
       <div class="symptoms container">
       <h3 class="latest-symptoms">Latest Symptoms</h3>
         <div class="info-container">
@@ -9,7 +16,8 @@
 
             <div class="symptom-contents">
               <div class="timestamp">
-                <%= post.created_at.strftime("%A at %H:%M%p")  %>
+                <%= post.created_at.strftime("%A at %H:%M%p")  %><br>
+                <%= @post_maker_first %>
               </div>
               <div class="location">
                 <a> Location of Issue: </a><br>

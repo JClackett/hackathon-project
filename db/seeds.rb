@@ -59,7 +59,7 @@ end
 posts_list = [
   { patient_id: '1', doctor_id: '1', location: 'Head', discomfort: '7', frequency: 'Intermittent', initial_occurence: 'Last Week', notes: "I've had a pretty bad headache on and off for a week"},
   { patient_id: '1', doctor_id: '1', location: 'Throat', discomfort: '2', frequency: 'Constant', initial_occurence: 'Yesterday Morning', notes: "Woke up yesterday with a very tickly cough"},
-  { patient_id: '2', doctor_id: '1', location: 'Neck', discomfort: '5', frequency: 'Now and Then', initial_occurence: 'Two Days Ago', notes: "Woke up with extremely sore neck"},
+  { patient_id: '2', doctor_id: '1', location: 'Neck', discomfort: '5', frequency: 'Once', initial_occurence: 'Two Days Ago', notes: "Woke up with extremely sore neck"},
 ]
 
 posts_list.each do |post|
@@ -71,7 +71,6 @@ messages_list = [
   { doctor_id: "1", patient_id: "1", content: "Hi Andrew, are my test results available yet?", created_by: "3"},
   { doctor_id: "1", patient_id: "1", content: "Hi Betty, I will upload them to you as soon as possible", created_by: "1"},
   { doctor_id: "1", patient_id: "2", content: "Hi Andrew, can you please upload my results from my recent test?", created_by: "4"},
-  { doctor_id: "1", patient_id: "2", content: "Hi Stanley, I am just about to upload them to you", created_by: ""},
 ]
 
 messages_list.each do |message|

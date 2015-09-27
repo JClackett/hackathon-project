@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 		<header>
 			<%= image_tag('IMClogo', class: 'logo') %>
+
 			<% if current_page?('/users/sign_in') or current_page?('/') %>
 			<% else %>
 				<div class="login-logout">
@@ -20,7 +22,6 @@
 						<%= link_to 'Log in', new_user_session_path %>
 					<% end %>
 				</div>
-				<%= image_tag('notif', class: 'notif') %>
 			<% end %>
 		</header>
 

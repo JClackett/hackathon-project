@@ -21,7 +21,7 @@ class PatientsController < ApplicationController
     @result = Result.new
     
     @patient_name = User.where(id: @patient.user_id).first.first_name
-  
+    @patient_last_name = User.where(id: @patient.user_id).first.last_name
   end
 
   # GET /patients/new

@@ -16,7 +16,8 @@
 
             <div class="symptom-contents">
               <div class="timestamp">
-                <%= post.created_at.strftime("%A at %H:%M%p")  %>
+                <%= post.created_at.strftime("%A at %H:%M%p")  %><br>
+                <%= @post_maker_first %>
               </div>
               <div class="location">
                 <a> Location of Issue: </a><br>

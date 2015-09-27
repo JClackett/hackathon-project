@@ -34,9 +34,10 @@ body {
 		p {
 			text-align: center;
 			font-size: 30px;
+			margin:10px;
 		}
 		img {
-			padding: 20px;
+			padding: 10px;
 			border-radius:50%;
 			height: 80px;
 			width: 80px;
@@ -51,10 +52,12 @@ body {
 
 	.symptoms {
 		padding: 15px;
-		strong {
-			font-size: 40px;
-			width: 100%;
-			margin: 0 auto;
+		text-align: center;
+
+		h3 {
+			height:60px;
+			font-size: 35px;
+			margin: 0;
 		}
 		.symptom-input{
 			width: 94%;
@@ -115,11 +118,12 @@ body {
 	}
 
 	.messages {
+		text-align: center;
 		padding: 15px;
-		strong {
-			font-size: 40px;
-			width: 100%;
-			margin: 0 auto;
+		h3 {
+			height:60px;
+			font-size: 35px;
+			margin: 0;
 		}
 		.message-input{
 			width:90%;
@@ -185,11 +189,12 @@ body {
 	}
 
 	.results {
+		text-align: center;
 		padding: 15px;
-		strong {
-			font-size: 40px;
-			width: 100%;
-			margin: 0 auto;
+		h3 {
+			height:60px;
+			font-size: 35px;
+			margin: 0;
 		}
 		.results-input{
 			width: 94%;

@@ -24,6 +24,24 @@ body {
 		width:30%;
 		float: left;
 	}
+
+	.hero {
+		width:100%;
+		margin: 0 auto;
+		height: 120px;
+		
+		p {
+			text-align: center;
+			font-size: 30px;
+		}
+		img {
+			padding: 20px;
+			border-radius:50%;
+			height: 80px;
+			width: 80px;
+		}
+
+	}
 	
 	.info-container {
 		height: 60vh;
@@ -47,17 +65,17 @@ body {
 			background: lightgrey;
 			text-align: center;
 			margin-bottom: 10px;
-
-			.new-button {
-
-			}
-
+		
 			a {
 				padding: 11px 80px;
 				text-decoration: none;
 				color: black;
 			}
 
+		}
+
+		.symptom-input:hover{
+			background: grey;
 		}
 
 		.info-container {
@@ -132,6 +150,11 @@ body {
 			    bottom: 0px;
 			    padding: 5px 10px;
 			    cursor: pointer;
+			    background-color: lightgrey; 
+			}
+
+			input:hover {
+				background-color: grey;
 			}
 		}
 
@@ -143,7 +166,8 @@ body {
 
 			.message-contents {
 				padding: 10px;
-				.created_by {
+
+				.created_by a{
 					font-weight: bold;
 				}
 
@@ -209,6 +233,10 @@ body {
 
 				.status .raw_data {
 					padding: 5px;
+				}
+
+				img {
+					cursor: pointer;
 				}
 
 				.notes {

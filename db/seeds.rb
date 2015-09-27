@@ -70,7 +70,6 @@ end
 messages_list = [
   { doctor_id: "1", patient_id: "1", content: "Hi Andrew, are my test results available yet?", created_by: "3"},
   { doctor_id: "1", patient_id: "1", content: "Hi Betty, I will upload them to you as soon as possible", created_by: "1"},
-  { doctor_id: "1", patient_id: "2", content: "Hi Andrew, can you please upload my results from my recent test?", created_by: "4"},
 ]
 
 messages_list.each do |message|

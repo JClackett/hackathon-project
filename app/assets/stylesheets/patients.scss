@@ -202,11 +202,12 @@ body {
 			padding: 10px;
 			font-size: 20px;
 			height: 27px;
-			background: lightgrey;
+			background-color: lightgrey;
 			text-align: center;
 			margin-bottom: 10px;
+		
 			.new-button {
-
+			
 			}
 
 			a {
@@ -215,6 +216,11 @@ body {
 				color: black;
 			}
 
+		}
+
+
+		.results-input:hover {
+			background-color: #bbb;
 		}
 
 		.info-container {	

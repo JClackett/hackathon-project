@@ -10,6 +10,13 @@ class PostsController < ApplicationController
     @doctor_messages = Message.where(created_by: @doctor.user_id).all
     @patients_messages = @messages - @doctor_messages
     @patients = Patient.where(doctor_id: @doctor.id).all
+
+    @patients_ordered = User.joins(:patients).where(patients: { doctor_id: @doctor}).all.order(:last_name)
+
+
+
+
+
   end
 
   # GET /posts/1

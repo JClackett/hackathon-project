@@ -1,37 +1,50 @@
-<div class="onion">
-<h1>Urgent Posts</h1>
-<div class="doctors-posts">
-    <% @posts.each do |post| %>
-      <% @post_maker_user=Patient.where(id: post.patient_id).first.user_id %>
-      <% @post_maker_first = User.where(id: @post_maker_user).first.first_name %>
-      <% @post_maker_last = User.where(id: @post_maker_user).first.last_name %>
-        
-        <div class="post-item post-maker">
-          <h3>Patients Name</h3>
-          <%= @post_maker_first + " " + @post_maker_last %>
-        </div>
-        <div class="post-item post-notes">
-          <h4>Patients Notes</h4>
-          <%= post.notes %>
-        </div>
-        <div class="post-item initial-occurence">
-          <h4>Initial Occurance</h4>
-          <%= post.initial_occurence %>
-        </div>
-        <div class="created-at">
-          <%= post.created_at.strftime("%A at %H:%M%p")%>
-        </div>
-    <% end %>
-</div>
+<div class="wrapper">
+      <div class="symptoms container">
+      <h3 class="latest-symptoms">Latest Symptoms</h3>
+        <div class="info-container">
+          <% @posts.each do |post| %>
+              <% @post_maker_user=Patient.where(id: post.patient_id).first.user_id %>
+              <% @post_maker_first = User.where(id: @post_maker_user).first.first_name %>
+              <% @post_maker_last = User.where(id: @post_maker_user).first.last_name %>
+            <div class="symptom-contents">
+              <div class="timestamp">
+                <%= post.created_at.strftime("%A at %H:%M%p")  %>
+              </div>
+              <div class="location">
+                <a> Location of Issue: </a><br>
+                <p>
+                  <%= post.location %>
+                </p>
+              </div>
+              <div class="discomfort">
+                <a> Level of Discomfort: </a><br>
+                <p>
+                <%= post.discomfort %>
+                </p>
+              </div>
+              <div class="frequency">
+                <a> Frequency: </a><br>
+                <p>
+                  <%= post.frequency %>
+                </p>
+              </div>
+              <div class="initial_occurence">
+                <a> Initial Occurence: </a><br>
+                <p>
+                  <%= post.initial_occurence %>
+                </p>
+              </div>
+              <div class="notes">
+                <a> Notes: </a><br>
+                <%= post.notes %>
+              </div>
+            </div>
+          <%end%>
+    </div>
+  </div>
 
-<div class="patients-container">
-    <% @patients.each do |patient| %>
-          <%= patient.user_id %>
-      <% end %>
-</div>
 
-
-<div class="latest-messages-container">
+<div class="latest-messages-container container">
   <h3 class="latest-messages">Latest Messages</h3>
   <div class="messages-wrapper">
   <% @patients_messages.each do |message| %>
@@ -52,6 +65,28 @@
       </div>
       <% end %>
   <%end%>
+  </div>
 </div>
+
+
+
+<div class="patients-container container">
+  <h3 class="my-patients">My Patients</h3>
+
+    <% @patients_ordered.each do |patient| %>
+          <% @patient_name_first = User.where(id: patient.id).first.first_name %>
+          <% @patient_name_last = User.where(id: patient.id).first.last_name %>
+        
+      <%= link_to patient_path(patient.id)  do %>
+      <div class="patient-icon-container">
+            <div class="patient-icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="patient-name">
+              <%= @patient_name_first +' ' + @patient_name_last%>
+            </div>
+        </div>
+        <%  end %>
+      <% end %>
 </div>
 </div>

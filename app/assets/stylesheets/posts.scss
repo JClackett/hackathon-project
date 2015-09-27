@@ -4,52 +4,17 @@
 
 $orange : #FDB576;
 
-.onion {
-	width: 90%;
-	margin-left:auto;
-	margin-right:auto;
-}
+
 
 /*=============================
 ========= Urgent Posts ========
 =============================*/
-
-.doctors-posts {
-	width:33.333%;
-	float: left;
-	text-align: center;
-	height:300px;
-	background-color: lightblue;
-	border-style: none;
-	border-radius: 10px;
-	margin: 10px;
-	
-	
-	.post-item {
-		height: 30px;
-		line-height: 15px;
-		width: 100%;
-	}
-
-	.created-at {
-		float: right;
-		margin: 40px 10px;
-		font-size: 12px;
-	}
-}
 
 
 
 /*=============================
 ========= Patient List ========
 =============================*/
-
-.patients-container {
-	float: left;
-	width:75%;
-	background-color: lightblue;
-	height:400px;
-}
 
 
 /*=============================
@@ -58,23 +23,23 @@ $orange : #FDB576;
 
 
 .latest-messages-container {
-	width:25%;
-	height:360px;
+	width:30%;
+	padding:15px;
 	float: left;
-	border-radius:10px;
 	
 	.latest-messages {
 		text-align: center;
-		border-radius:10px 10px 0 0;
 		height:60px;
-		margin: 0;
+		margin: 0 0 10px 0;
 		line-height: 60px;
 		background-color: $orange;
 	}
 
 	.messages-wrapper {
-		height: 300px;
+		height: 75vh;
 		overflow:auto;
+		background-color: #fff;
+		
 	
 		a {
 			text-decoration:none;
@@ -100,8 +65,42 @@ $orange : #FDB576;
 	}
 }
 
+.latest-symptoms , .my-patients {
+		text-align: center;
+		height:60px;
+		margin: 0 0 10px 0;
+		line-height: 60px;
+		background-color: $orange;
+}
 
+.patients-container {
+	width:30%;
+	padding:15px;
+	float: left;
+	
+	a {	
+		text-decoration:none;
+		color:#333;
+		
+	}
+	
+	.patient-icon-container {
+		text-align: center;
+		background-color: #fff;
+		width: 100%;
+		margin-top:10px;
+		padding: 10px 0;
+	
+	
+		.patient-icon  {
+			font-size: 3rem;
+			
+		}
 
+		.patient-name {
+			
 
-
+		}
+	}
+}
 

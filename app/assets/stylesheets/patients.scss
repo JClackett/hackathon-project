@@ -40,7 +40,6 @@ body {
 		.symptom-input{
 			width: 94%;
 			resize:none;
-			border-radius: 5px ;
 			padding: 10px;
 			font-size: 20px;
 			height: 27px;
@@ -64,8 +63,6 @@ body {
 			height: 65vh;	
 			.symptom-contents{
 				padding: 10px;
-				border: solid 2px darkgrey;
-				border-radius: 10px;
 				text-align: center;
 				background-color: white;
 				margin-bottom: 10px;
@@ -95,7 +92,6 @@ body {
 					font-size: 10px;
 				}
 			}
-
 		}
 	}
 
@@ -137,7 +133,7 @@ body {
 
 		.info-container {	
 		    background-color: white;
-		    border-radius: 10px;
+		    // border-radius: 10px;
 		    margin-top: 11px;
 		    height: 58vh;
 
@@ -156,7 +152,6 @@ body {
 					font-size: 10px;
 				}
 			}
-
 		}
 	}
 
@@ -220,7 +215,6 @@ body {
 					font-size: 10px;
 				}
 			}
-
 		}
 	}
 }

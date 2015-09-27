@@ -12,6 +12,8 @@ users_list = [
   { first_name: "Bob", last_name: "Stinson", doctor: true, email: 'doctor2@gmail.com', password: 'password'},
   { first_name: "Betty", last_name: "Stratford",email: 'patient1@gmail.com', password: 'password'},
   { first_name: "Stanley", last_name: "Rimple",email: 'patient2@gmail.com', password: 'password'},
+  { first_name: "Stannis", last_name: "Baratheon",email: 'patient3@gmail.com', password: 'password'},
+
 ]
 
 users_list.each do |user|
@@ -30,6 +32,8 @@ end
 patients_list = [
   { user_id: '3', doctor_id: '1'},
   { user_id: '4', doctor_id: '2'},
+  { user_id: '5', doctor_id: '2'},
+
 ]
 
 patients_list.each do |patient|

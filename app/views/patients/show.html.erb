@@ -28,7 +28,7 @@
 				<% end %>
 			</div>
 			<div class="symptom-history">
-				<p> Symtpom History </p>
+				<p> Symptom History </p>
 			</div>
 			<div class="info-container">
 				<div class="symptom-container">
@@ -39,29 +39,30 @@
 							</div>
 							<div class="location">
 								<a> Location of Issue: </a><br>
-								<div class="input">
+								<p>
 									<%= post.location %>
-								</div>
+								</p>
 							</div>
 							<div class="discomfort">
 								<a> Level of Discomfort: </a><br>
-								<div class="input">
-									<%= post.discomfort %>
-								</div>
+								<p>
+								<%= post.discomfort %>
+								</p>
 							</div>
 							<div class="frequency">
 								<a> Frequency: </a><br>
-								<div class="input">
+								<p>
 									<%= post.frequency %>
-								</div>
+								</p>
 							</div>
 							<div class="initial_occurence">
 								<a> Initial Occurence: </a><br>
-								<div class="input">
+								<p>
 									<%= post.initial_occurence %>
-								</div>
+								</p>
 							</div>
 							<div class="notes">
+								<a> Notes: </a><br>
 								<%= post.notes %>
 							</div>
 						</div>

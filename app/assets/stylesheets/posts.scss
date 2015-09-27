@@ -9,12 +9,20 @@ $orange : #FDB576;
 	margin-left:auto;
 	margin-right:auto;
 }
+
+/*=============================
+========= Urgent Posts ========
+=============================*/
+
 .doctors-posts {
-	width:75%;
+	width:33.333%;
 	float: left;
 	text-align: center;
 	height:300px;
 	background-color: lightblue;
+	border-style: none;
+	border-radius: 10px;
+	margin: 10px;
 	
 	
 	.post-item {
@@ -30,12 +38,24 @@ $orange : #FDB576;
 	}
 }
 
+
+
+/*=============================
+========= Patient List ========
+=============================*/
+
 .patients-container {
 	float: left;
 	width:75%;
 	background-color: lightblue;
 	height:400px;
 }
+
+
+/*=============================
+=========== Messages ==========
+=============================*/
+
 
 .latest-messages-container {
 	width:25%;

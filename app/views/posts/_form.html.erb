@@ -1,3 +1,5 @@
+<h1 class="post-symptom-title">Submit your symptoms to your Doctor</h1>
+
 <div class="form">
 
 <%= form_for(@post) do |f| %>
@@ -13,7 +15,7 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.text_field :location, placeholder: 'Location', class: 'input' %>
+    <%= f.text_field :location, placeholder: 'Location of discomfort', class: 'input' %>
   </div>
   <div class="field">
     <%= f.number_field :discomfort, placeholder: 'Discomfort (1 the lowest, 10 the highest)', class: 'input' %>
@@ -25,9 +27,9 @@
     <%= f.text_field :initial_occurence, placeholder: 'Initial Occurence', class: 'input' %>
   </div>
   <div class="field">
-    <%= f.text_area :notes, placeholder: 'Additional notes', class: 'input' %>
+    <%= f.text_area :notes, placeholder: 'Additional notes', class: 'input text-input' %>
   </div>
-  <div class="login-submit-button">
+  <div class="submit-button">
     <%= f.submit "Submit", class: 'submit' %>
   </div>
 <% end %>

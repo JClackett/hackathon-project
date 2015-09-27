@@ -1,6 +1,6 @@
 <div class="onion">
-<div class="doctors-posts">
 <h1>Urgent Posts</h1>
+<div class="doctors-posts">
     <% @posts.each do |post| %>
       <% @post_maker_user=Patient.where(id: post.patient_id).first.user_id %>
       <% @post_maker_first = User.where(id: @post_maker_user).first.first_name %>

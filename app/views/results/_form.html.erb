@@ -22,6 +22,7 @@
   </div>
   <div class="field">
     <%= f.text_area :notes, placeholder: 'Additional notes', class: 'input text-input' %>
+    <%= f.hidden_field :patient_id, value: @patient.id %>
   </div>
   <div class="submit-button">
     <%= f.submit "Submit", class: 'submit'%>

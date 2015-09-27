@@ -38,7 +38,7 @@ body {
 			margin: 0 auto;
 		}
 		.symptom-input{
-			width: 92%;
+			width: 94%;
 			resize:none;
 			border-radius: 5px ;
 			padding: 10px;
@@ -46,6 +46,7 @@ body {
 			height: 27px;
 			background: lightgrey;
 			text-align: center;
+			margin-bottom: 10px;
 
 			.new-button {
 
@@ -62,11 +63,11 @@ body {
 		.info-container {	
 			.symptom-contents{
 				padding: 10px;
-				margin-top: 10px;
 				border: solid 2px darkgrey;
 				border-radius: 10px;
 				text-align: center;
 				background-color: white;
+				margin-bottom: 10px;
 
 				.created_by {
 					font-weight: bold;
@@ -165,7 +166,7 @@ body {
 			margin: 0 auto;
 		}
 		.results-input{
-			width: 92%;
+			width: 94%;
 			resize:none;
 			border-radius: 5px ;
 			padding: 10px;
@@ -173,7 +174,7 @@ body {
 			height: 27px;
 			background: lightgrey;
 			text-align: center;
-
+			margin-bottom: 10px;
 			.new-button {
 
 			}
@@ -189,7 +190,6 @@ body {
 		.info-container {	
 			.results-contents{
 				padding: 10px;
-				margin-top: 10px;
 				border: solid 2px darkgrey;
 				border-radius: 10px;
 				text-align: center;

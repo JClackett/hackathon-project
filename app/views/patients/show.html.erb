@@ -3,16 +3,13 @@
 		<p>
 		  <strong>Symptoms</strong>
 		</p>
+		<% if current_user.doctor == true %>
+						<% else %>
 			<div class="symptom-input">
-				<% if current_user.doctor == true %>
-				<% else %>
-					<div class="new-button"><%= link_to 'New Symptom', new_post_path %>
+					<div class="new-button"><%= link_to 'New Symptom', new_post_path(:patient_id => @patient.id) %>
 					</div>
-				<% end %>
 			</div>
-			<div class="symptom-history">
-				<p> Symptom History </p>
-			</div>
+		<% end %>
 			<div class="info-container">
 				<div class="symptom-container">
 					<% @posts.each do |post| %>
@@ -100,7 +97,7 @@
 		</p>
 		<% if current_user.doctor == true %>
 			<div class="results-input">
-				<%= link_to 'New Result', new_result_path %>
+				<%= link_to 'New Result', new_result_path(:patient_id => @patient.id) %>
 			</div>
 		<% end %>	
 		<div class="info-container">

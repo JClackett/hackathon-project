@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @patient = Patient.find(params[:patient_id])
   end
 
   # GET /posts/1/edit
@@ -32,11 +33,9 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if current_user.doctor == true
       @post.doctor_id = Doctor.where(user_id: current_user.id).first.id
-      @post.patient_id = Patient.where(doctor_id: current_user.id).first.id
       @post.save
       redirect_to patient_path(@post.patient_id)
     else
-      @post.patient_id = Patient.where(user_id: current_user.id).first.id
       @post.doctor_id = Patient.where(user_id: current_user.id).first.doctor_id
       @post.save
       redirect_to patient_path(@post.patient_id)

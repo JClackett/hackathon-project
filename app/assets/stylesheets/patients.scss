@@ -21,7 +21,7 @@ body {
 	@extend .group;
 
 	.container {
-		width:31%;
+		width:30%;
 		float: left;
 	}
 	
@@ -122,14 +122,14 @@ body {
 
 			input {
 				margin-top: 11px;
-				float:right;
 				border: none;
-				font-size: 20px;
-			    right: -22px;
+				font-size: 18px;
+				font-weight: regular;
 			    position: relative;
 			    border-radius: 5px;
 			    bottom: 0px;
 			    padding: 5px 10px;
+			    cursor: pointer;
 			}
 		}
 
@@ -146,6 +146,69 @@ body {
 
 				.content {
 					padding: 5px;
+				}
+
+				.timestamp {
+					float:right;
+					font-size: 10px;
+				}
+			}
+
+		}
+	}
+
+	.results {
+		padding: 15px;
+		strong {
+			font-size: 40px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.results-input{
+			width: 92%;
+			resize:none;
+			border-radius: 5px ;
+			padding: 10px;
+			font-size: 20px;
+			height: 27px;
+			background: lightgrey;
+			text-align: center;
+
+			.new-button {
+
+			}
+
+			a {
+				padding: 11px 80px;
+				text-decoration: none;
+				color: black;
+			}
+
+		}
+
+		.info-container {	
+			.results-contents{
+				padding: 10px;
+				margin-top: 10px;
+				border: solid 2px darkgrey;
+				border-radius: 10px;
+				text-align: center;
+				background-color: white;
+
+				a {
+					float: left;
+				}
+
+				p {
+					margin: 0;
+				}
+
+				.status .raw_data {
+					padding: 5px;
+				}
+
+				.notes {
+
 				}
 
 				.timestamp {

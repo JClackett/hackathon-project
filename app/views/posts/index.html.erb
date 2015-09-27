@@ -76,8 +76,9 @@
     <% @patients_ordered.each do |patient| %>
           <% @patient_name_first = User.where(id: patient.id).first.first_name %>
           <% @patient_name_last = User.where(id: patient.id).first.last_name %>
-        
-      <%= link_to patient_path(patient.id)  do %>
+
+
+      <%= link_to patient_path(Patient.where(user_id: patient.id).first.id)  do %>
       <div class="patient-icon-container">
             <div class="patient-icon">
                 <i class="fa fa-user"></i>

@@ -27,12 +27,12 @@ class ResultsController < ApplicationController
     @result = Result.new(result_params)
     if current_user.doctor == true
       @result.doctor_id = Doctor.where(user_id: current_user.id).first.id
-      @result.patient_id = Patient.where(doctors_id: current_user.id).first.id
+      @result.patient_id = Patient.where(doctor_id: current_user.id).first.id
       @result.save
       redirect_to patient_path(@result.patient_id)
     else
       @result.patient_id = Patient.where(user_id: current_user.id).first.id
-      @result.doctor_id = Patient.where(user_id: current_user.id).first.doctors_id
+      @result.doctor_id = Patient.where(user_id: current_user.id).first.doctor_id
       @result.save
       redirect_to patient_path(@result.patient_id)
     end

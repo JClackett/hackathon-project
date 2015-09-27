@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @messages = Message.where(doctor_id: @doctor.id).all
     @doctor_messages = Message.where(created_by: @doctor.user_id).all
     @patients_messages = @messages - @doctor_messages
+    @patients = Patient.where(doctor_id: @doctor.id).all
   end
 
   # GET /posts/1
@@ -31,12 +32,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if current_user.doctor == true
       @post.doctor_id = Doctor.where(user_id: current_user.id).first.id
-      @post.patient_id = Patient.where(doctors_id: current_user.id).first.id
+      @post.patient_id = Patient.where(doctor_id: current_user.id).first.id
       @post.save
       redirect_to patient_path(@post.patient_id)
     else
       @post.patient_id = Patient.where(user_id: current_user.id).first.id
-      @post.doctor_id = Patient.where(user_id: current_user.id).first.doctors_id
+      @post.doctor_id = Patient.where(user_id: current_user.id).first.doctor_id
       @post.save
       redirect_to patient_path(@post.patient_id)
     end

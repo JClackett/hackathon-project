@@ -13,11 +13,11 @@ class PatientsController < ApplicationController
   # GET /patients/1
   # GET /patients/1.json
   def show
-    @posts = Post.where(patient_id: params[:id])
+    @posts = Post.where(patient_id: params[:id]).reverse
     @post = Post.new
     @messages = Message.where(patient_id: params[:id]).reverse
     @message = Message.new
-    @results = Result.where(patient_id: params[:id])
+    @results = Result.where(patient_id: params[:id]).reverse
     @result = Result.new
     
     @patient_name = User.where(id: @patient.user_id).first.first_name

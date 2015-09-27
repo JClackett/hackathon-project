@@ -2,10 +2,11 @@
       <div class="symptoms container">
       <h3 class="latest-symptoms">Latest Symptoms</h3>
         <div class="info-container">
-          <% @posts.each do |post| %>
+          <% @posts.reverse.each do |post| %>
               <% @post_maker_user=Patient.where(id: post.patient_id).first.user_id %>
               <% @post_maker_first = User.where(id: @post_maker_user).first.first_name %>
               <% @post_maker_last = User.where(id: @post_maker_user).first.last_name %>
+
             <div class="symptom-contents">
               <div class="timestamp">
                 <%= post.created_at.strftime("%A at %H:%M%p")  %>
@@ -39,6 +40,7 @@
                 <%= post.notes %>
               </div>
             </div>
+
           <%end%>
     </div>
   </div>
@@ -73,6 +75,8 @@
 <div class="patients-container container">
   <h3 class="my-patients">My Patients</h3>
 
+  <div class="patients-wrapper">
+
     <% @patients_ordered.each do |patient| %>
           <% @patient_name_first = User.where(id: patient.id).first.first_name %>
           <% @patient_name_last = User.where(id: patient.id).first.last_name %>
@@ -89,5 +93,6 @@
         </div>
         <%  end %>
       <% end %>
+      </div>
 </div>
 </div>

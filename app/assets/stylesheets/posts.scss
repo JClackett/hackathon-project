@@ -23,7 +23,7 @@ $orange : #FDB576;
 
 
 .latest-messages-container {
-	width:30%;
+	width:30%;	
 	padding:15px;
 	float: left;
 	
@@ -32,7 +32,8 @@ $orange : #FDB576;
 		height:60px;
 		margin: 0 0 10px 0;
 		line-height: 60px;
-		background-color: $orange;
+		font-size: 35px;
+		
 	}
 
 	.messages-wrapper {
@@ -68,15 +69,23 @@ $orange : #FDB576;
 .latest-symptoms , .my-patients {
 		text-align: center;
 		height:60px;
+		font-size: 35px;
 		margin: 0 0 10px 0;
 		line-height: 60px;
-		background-color: $orange;
 }
 
 .patients-container {
 	width:30%;
 	padding:15px;
 	float: left;
+	
+	.patients-wrapper {
+		height: 75vh;
+		overflow:auto;
+		margin: 0;
+		padding: 0;
+	}
+	
 	
 	a {	
 		text-decoration:none;
@@ -88,16 +97,19 @@ $orange : #FDB576;
 		text-align: center;
 		background-color: #fff;
 		width: 100%;
-		margin-top:10px;
+		margin-bottom:10px;
 		padding: 10px 0;
 	
-	
+		&:hover {
+			background-color: #EEE;
+		}
 		.patient-icon  {
 			font-size: 3rem;
 			
 		}
 
 		.patient-name {
+			font-weight:500;
 			
 
 		}

@@ -28,7 +28,8 @@ body {
 	.hero {
 		width:100%;
 		margin: 0 auto;
-		height: 120px;
+		height: 100px;
+		line-height: 30px;
 		
 		p {
 			text-align: center;
@@ -131,7 +132,6 @@ body {
 			textarea {
 				width: 103%;
 				resize:none;
-				border-radius: 5px ;
 				padding: 10px;
 				font-size: 20px;
 				height: 25px;
@@ -146,7 +146,6 @@ body {
 				font-size: 18px;
 				font-weight: regular;
 			    position: relative;
-			    border-radius: 5px;
 			    padding: 5px 10px;
 			    cursor: pointer;
 			    background-color: lightgrey; 
@@ -156,13 +155,13 @@ body {
 			}
 
 			input:hover {
-				background-color: grey;
+				background-color: #bbb;
 			}
 		}
 
 		.info-container {	
 		    background-color: white;
-		    // border-radius: 10px;
+
 		    margin-top: 11px;
 		    height: 58vh;
 
@@ -170,7 +169,7 @@ body {
 				padding: 10px;
 
 				.created_by a{
-					font-weight: bold;
+					font-weight: 500;
 				}
 
 				.content {
@@ -195,7 +194,6 @@ body {
 		.results-input{
 			width: 94%;
 			resize:none;
-			border-radius: 5px ;
 			padding: 10px;
 			font-size: 20px;
 			height: 27px;
@@ -218,8 +216,6 @@ body {
 			height: 73vh;
 			.results-contents{
 				padding: 10px;
-				border: solid 2px darkgrey;
-				border-radius: 10px;
 				text-align: center;
 				background-color: white;
 				margin-bottom: 10px;

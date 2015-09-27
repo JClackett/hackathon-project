@@ -58,13 +58,8 @@ end
 
 posts_list = [
   { patient_id: '1', doctor_id: '1', location: 'Head', discomfort: '7', frequency: 'Intermittent', initial_occurence: 'Last Week', notes: "I've had a pretty bad headache on and off for a week"},
-  { patient_id: '2', doctor_id: '2', location: 'Throat', discomfort: '2', frequency: 'Constant', initial_occurence: 'Yesterday Morning', notes: "Woke up yesterday with a very tickly cough"},
-  { patient_id: '2', doctor_id: '2', location: 'Neck', discomfort: '5', frequency: 'Constant', initial_occurence: 'Two Days Ago', notes: "Woke up with extremely sore neck"},
-  { patient_id: '2', doctor_id: '2', location: 'Throat', discomfort: '2', frequency: 'Constant', initial_occurence: 'Yesterday Morning', notes: "Woke up yesterday with a very tickly cough"},
-  { patient_id: '2', doctor_id: '2', location: 'Throat', discomfort: '2', frequency: 'Constant', initial_occurence: 'Yesterday Morning', notes: "Woke up yesterday with a very tickly cough"},
-  { patient_id: '2', doctor_id: '2', location: 'Throat', discomfort: '2', frequency: 'Constant', initial_occurence: 'Yesterday Morning', notes: "Woke up yesterday with a very tickly cough"},
-  { patient_id: '2', doctor_id: '2', location: 'Throat', discomfort: '2', frequency: 'Constant', initial_occurence: 'Yesterday Morning', notes: "Woke up yesterday with a very tickly cough"},
-
+  { patient_id: '1', doctor_id: '1', location: 'Throat', discomfort: '2', frequency: 'Constant', initial_occurence: 'Yesterday Morning', notes: "Woke up yesterday with a very tickly cough"},
+  { patient_id: '1', doctor_id: '1', location: 'Neck', discomfort: '5', frequency: 'Now and Then', initial_occurence: 'Two Days Ago', notes: "Woke up with extremely sore neck"},
 ]
 
 posts_list.each do |post|

@@ -23,6 +23,22 @@
 					<% end %>
 				</div>
 			<% end %>
+
+			<div class="home-button">
+				<% if user_signed_in? %>
+					<% if current_user.doctor == true %>
+						<%= link_to posts_path do %>
+							<i class="fa fa-home"></i>
+						<% end %>
+					<% else %>
+						<% @onion = Patient.where(user_id: current_user.id).first.id %>
+						<%= link_to patient_path(@onion) do %>
+							<i class="fa fa-home"></i>
+						<% end %>
+					<% end %>
+				<% end %>
+			</div>
+
 		</header>
 
 

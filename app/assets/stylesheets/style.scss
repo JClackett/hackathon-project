@@ -47,6 +47,7 @@ header {
 		padding: 0 20px;
 		line-height: 10vh;
 		text-align: center;
+		margin-right: 5px;
 
 		a {
 			text-decoration: none;
@@ -59,11 +60,14 @@ header {
 		}
 	}
 
-	.notif {
+	.home-button a {
 		float: right;
-		height: 6vh;
-		margin: 2vh;
-	}	
+		font-size: 2.5rem;
+		margin: 10px 15px;
+		text-decoration: none;
+		color: #555;
+		}
+
 }
 
 

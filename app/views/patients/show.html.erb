@@ -1,4 +1,25 @@
 <div class="wrapper">
+
+	<div class="hero">
+		<% if current_user.doctor == true %>
+			<p>	<br>
+				<strong>Patient:</strong>
+				<%= @patient_name %> <%= @patient_last_name %>
+			</p>
+
+		<%else%>
+			<p>	Hello <%= @patient_name %>, you are contacting your GP, Dr.
+				<% @patient = Patient.where(user_id: [current_user.id]).first%>
+				<% @doctor = Doctor.where(id: [@patient.doctor_id]).first %>
+				<% @doctor_name = User.where(id: [@doctor.user_id]).first.first_name %>
+				<% @doctor_last_name = User.where(id: [@doctor.user_id]).first.last_name %>
+				<%= @doctor_name %> <%= @doctor_last_name %>
+				<br>
+				<%= image_tag ('Doctor-790x1024.jpg')%>
+			</p>
+
+		<%end%>
+	</div>
 	<div class="symptoms container">
 		<p>
 		  <strong>Symptoms</strong>
@@ -58,7 +79,7 @@
 		<div class="message-input">
 			<%= form_for(@message) do |f| %>
 
-			  <div class="field">
+			  <div class="field box">
 			    <%= f.text_area :content, :placeholder => "Type your message here..." %>
 			  </div>
 
@@ -113,8 +134,10 @@
 					<div class="raw_data">
 						<a> Data: </a><br>
 				
-
+							<%= link_to "http://www.beatcfsandfms.org/GeorgesTests/OrganicAnal_1098_pg1.gif",class: 'attachment' do %>
 							<%= image_tag('attachment', class: 'attachment') %>
+
+							<%end%>
 
 					
 					</div>

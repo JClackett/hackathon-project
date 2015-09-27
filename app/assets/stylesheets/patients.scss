@@ -24,6 +24,24 @@ body {
 		width:30%;
 		float: left;
 	}
+
+	.hero {
+		width:100%;
+		margin: 0 auto;
+		height: 120px;
+		
+		p {
+			text-align: center;
+			font-size: 30px;
+		}
+		img {
+			padding: 20px;
+			border-radius:50%;
+			height: 80px;
+			width: 80px;
+		}
+
+	}
 	
 	.info-container {
 		height: 60vh;
@@ -47,17 +65,17 @@ body {
 			background: lightgrey;
 			text-align: center;
 			margin-bottom: 10px;
-
-			.new-button {
-
-			}
-
+		
 			a {
 				padding: 11px 80px;
 				text-decoration: none;
 				color: black;
 			}
 
+		}
+
+		.symptom-input:hover{
+			background: grey;
 		}
 
 		.info-container {
@@ -109,6 +127,11 @@ body {
 		.message-input{
 			width:90%;
 
+			.box {
+				    width: 230px;
+    float: left;
+			}
+
 			textarea {
 				width: 103%;
 				resize:none;
@@ -123,15 +146,21 @@ body {
 			}
 
 			input {
-				margin-top: 11px;
 				border: none;
 				font-size: 18px;
 				font-weight: regular;
 			    position: relative;
 			    border-radius: 5px;
-			    bottom: 0px;
 			    padding: 5px 10px;
 			    cursor: pointer;
+			    background-color: lightgrey; 
+			    right: -36px;
+    			height: 48px;
+    			top: -1px;
+			}
+
+			input:hover {
+				background-color: grey;
 			}
 		}
 
@@ -143,7 +172,8 @@ body {
 
 			.message-contents {
 				padding: 10px;
-				.created_by {
+
+				.created_by a{
 					font-weight: bold;
 				}
 
@@ -209,6 +239,14 @@ body {
 
 				.status .raw_data {
 					padding: 5px;
+				}
+
+				.raw_data a{
+					float: none;
+				}
+
+				img {
+					cursor: pointer;
 				}
 
 				.notes {

@@ -7,7 +7,7 @@ class PatientsController < ApplicationController
     @posts = Post.all
     @post = Post.new
     @doctor = Doctor.where(user_id: current_user.id).first.id
-    @patients = Patient.where(doctors_id: @doctor)
+    @patients = Patient.where(doctor_id: @doctor)
   end
 
   # GET /patients/1
@@ -81,6 +81,6 @@ class PatientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def patient_params
-      params.require(:patient).permit(:user_id, :doctors_id)
+      params.require(:patient).permit(:user_id, :doctor_id)
     end
 end

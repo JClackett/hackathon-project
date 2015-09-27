@@ -8,7 +8,7 @@
 			</p>
 
 		<%else%>
-			<p>	Hello <%= @patient_name %>, you are contacting your GP, Dr.
+			<p>	Hello <%= @patient_name %>, you are speaking with your GP, Dr.
 				<% @patient = Patient.where(user_id: [current_user.id]).first%>
 				<% @doctor = Doctor.where(id: [@patient.doctor_id]).first %>
 				<% @doctor_name = User.where(id: [@doctor.user_id]).first.first_name %>

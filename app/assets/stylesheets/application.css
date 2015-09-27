@@ -14,7 +14,15 @@
  *= require_self
  */
 
-
+.main-title {
+	margin: 15px;
+	padding: 0;
+	font-size: 30px;
+	position: absolute;
+	top:0;
+	left:180px;
+	font-weight: 500;
+}
 
 
 

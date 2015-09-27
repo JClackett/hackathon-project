@@ -130,8 +130,8 @@ body {
 			width:90%;
 
 			.box {
-				    width: 230px;
-    float: left;
+				width: 230px;
+   				float: left;
 			}
 
 			textarea {
@@ -140,6 +140,7 @@ body {
 				padding: 10px;
 				font-size: 20px;
 				height: 25px;
+				font-family: Roboto;
 			}
 
 			.actions {
@@ -150,6 +151,7 @@ body {
 				border: none;
 				font-size: 18px;
 				font-weight: regular;
+				font-family: Roboto;
 			    position: relative;
 			    padding: 5px 10px;
 			    cursor: pointer;

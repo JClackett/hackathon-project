@@ -1,7 +1,7 @@
 
-<h1 class="intro-header">Welcome to Island Medial Centre's MyGP</h1>
+<h1 class="intro-header">Welcome to Island Medical Centre's MyGP</h1>
 
-<p class="intro-text">Gain direct access to your test results and talk directly with your GP</p>
+<p class="intro-text">Gain direct access to your test results and talk directly to your GP</p>
 
 <div class="login-form">
 
@@ -22,11 +22,13 @@
     </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="login-submit-button">
+    <%= f.submit "Log in", class: 'submit' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+<% end -%>
 
 </div>

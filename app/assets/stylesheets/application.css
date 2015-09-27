@@ -16,46 +16,6 @@
 
 
 
-/* ===================================================
-===================== Nav bar ========================
-====================================================*/
 
-header {
-	width: 100%;
-	height: 74px;
-	background-color: #FFF;
-	border-bottom: solid 2px #EEE;
-}
 
-.logo {
-	margin: 10px 0;
-}
 
-.notif {
-	height: 42px;
-	width: 45px;
-	right: 150px;
-	top: 15px;
-	position: fixed;
-
-}
-
-.login-logout {
-	position: fixed;
-	right: 25px;
-	top: 21px;
-	font-size: 1.5rem;
-	padding: 0 20px;
-	text-align: center;
-}	
-
-.login-logout a {
-	text-decoration: none;
-	text-align: center;
-	color: #555;
-}
-
-.login-logout a:visited {
-	color: #555;
-
-}

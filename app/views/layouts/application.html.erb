@@ -10,19 +10,17 @@
 <body>
 		<header>
 			<%= image_tag('IMClogo', class: 'logo') %>
+			<% if current_page?('/users/sign_in') %>
+			<% else %>
 				<div class="login-logout">
-				<% if current_page?('/users/sign_in') %>
-				<% else %>
 					<% if user_signed_in? %>
 						<%= link_to'Logout', destroy_user_session_path, :method => :delete %>
-						<% else %>
+					<% else %>
 						<%= link_to 'Login', new_user_session_path %>
 					<% end %>
-					<%= image_tag('notif', class: 'notif') %>
-				<% end %>
-
 				</div>
-
+				<%= image_tag('notif', class: 'notif') %>
+			<% end %>
 		</header>
 
 

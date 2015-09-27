@@ -1,20 +1,3 @@
-<% if current_user.doctor == true %>
-	<p>
-		<strong>Patient:</strong>
-		<%= @patient_name %>
-	</p>
-
-<%else%>
-	<p>
-		<strong>Dr.</strong>
-		<% @patient = Patient.where(user_id: [current_user.id]).first%>
-		<% @doctor = Doctor.where(id: [@patient.doctors_id]).first %>
-		<% @doctor_name = User.where(id: [@doctor.user_id]).first.first_name %>
-		<%= @doctor_name %>
-	</p>
-
-<%end%>
-
 <div class="wrapper">
 	<div class="symptoms container">
 		<p>

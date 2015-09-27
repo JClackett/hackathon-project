@@ -1,7 +1,7 @@
-<h1>Urgent Posts</h1>
+<div class="onion">
 <div class="doctors-posts">
+<h1>Urgent Posts</h1>
     <% @posts.each do |post| %>
-      
       <% @post_maker_user=Patient.where(id: post.patient_id).first.user_id %>
       <% @post_maker_first = User.where(id: @post_maker_user).first.first_name %>
       <% @post_maker_last = User.where(id: @post_maker_user).first.last_name %>
@@ -24,8 +24,11 @@
     <% end %>
 </div>
 
-
-<br>
+<div class="patients-container">
+    <% @patients.each do |patient| %>
+          <%= patient.user_id %>
+      <% end %>
+</div>
 
 
 <div class="latest-messages-container">
@@ -51,4 +54,4 @@
   <%end%>
 </div>
 </div>
-  
+</div>

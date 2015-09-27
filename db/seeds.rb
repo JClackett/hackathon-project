@@ -28,8 +28,8 @@ doctors_list.each do |doctor|
 end
 
 patients_list = [
-  { user_id: '3', doctors_id: '1'},
-  { user_id: '4', doctors_id: '2'},
+  { user_id: '3', doctor_id: '1'},
+  { user_id: '4', doctor_id: '2'},
 ]
 
 patients_list.each do |patient|

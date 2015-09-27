@@ -19,6 +19,9 @@
     <%= f.text_field :raw_data %>
   </div>
   <div class="field">
+    <%= f.hidden_field :patient_id, value: @patient.id %>
+  </div>
+  <div class="field">
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>

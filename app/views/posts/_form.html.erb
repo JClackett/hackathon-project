@@ -19,6 +19,9 @@
     <%= f.number_field :discomfort, placeholder: 'Discomfort (1 the lowest, 10 the highest)', class: 'input' %>
   </div>
   <div class="field">
+    <%= f.hidden_field :patient_id, value: @patient.id %>
+  </div>
+  <div class="field">
     <%= f.text_field :frequency, placeholder: 'Frequency', class: 'input' %>
   </div>
   <div class="field">

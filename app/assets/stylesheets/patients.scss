@@ -60,7 +60,8 @@ body {
 
 		}
 
-		.info-container {	
+		.info-container {
+			height: 65vh;	
 			.symptom-contents{
 				padding: 10px;
 				border: solid 2px darkgrey;
@@ -138,6 +139,7 @@ body {
 		    background-color: white;
 		    border-radius: 10px;
 		    margin-top: 11px;
+		    height: 58vh;
 
 			.message-contents {
 				padding: 10px;
@@ -188,12 +190,14 @@ body {
 		}
 
 		.info-container {	
+			height: 73vh;
 			.results-contents{
 				padding: 10px;
 				border: solid 2px darkgrey;
 				border-radius: 10px;
 				text-align: center;
 				background-color: white;
+				margin-bottom: 10px;
 
 				a {
 					float: left;
